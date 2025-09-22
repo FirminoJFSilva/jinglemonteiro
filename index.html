@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colégio Monteiro Lobato - Jingles Musical</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #15e638, #f36303);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        
+        .school-logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #15e638, #1a2a6c);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #ffdd00;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .lyrics {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .verse, .chorus {
+            margin-bottom: 25px;
+        }
+        
+        .verse h3, .chorus h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #ffdd00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .verse h3:before, .verse h3:after,
+        .chorus h3:before, .chorus h3:after {
+            content: "♪";
+            margin: 0 10px;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .chorus {
+            background: rgba(255, 235, 59, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid rgba(255, 235, 59, 0.4);
+        }
+        
+        .chorus p {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #fff;
+        }
+        
+        .music-controls {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        button {
+            background: linear-gradient(to right, #ff8a00, #da1b60);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        button:active {
+            transform: translateY(1px);
+        }
+        
+        .play-btn {
+            background: linear-gradient(to right, #00c853, #00e676);
+        }
+        
+        .animation-box {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            height: 60px;
+        }
+        
+        .note {
+            font-size: 30px;
+            margin: 0 10px;
+            animation: bounce 2s infinite;
+            opacity: 0;
+        }
+        
+        .note:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+        
+        .note:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        
+        .note:nth-child(4) {
+            animation-delay: 0.9s;
+        }
+        
+        @keyframes bounce {
+            0% { transform: translateY(0); opacity: 0; }
+            50% { transform: translateY(-20px); opacity: 1; }
+            100% { transform: translateY(0); opacity: 0; }
+        }
+        
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            p {
+                font-size: 1.1rem;
+            }
+            
+            .chorus p {
+                font-size: 1.2rem;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="mp3/CML.png" alt="Logomarca">
+        <h1>Colégio Monteiro</h1>
+        <h2>Jingle Musical</h2>
+        
+        <div class="animation-box">
+            <div class="note">♪</div>
+            <div class="note">♪</div>
+            <div class="note">♪</div>
+            <div class="note">♪</div>
+        </div>
+        
+        <div class="music-controls">
+            <audio controls>
+              <source src="mp3/Colégio Monteiro.mp3" src="" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="lyrics">
+            <div class="verse">
+                <h3>Estrofe</h3>
+                <p>Disciplina e acolhimento,</p>
+                <p>Comprometimento e atenção,</p>
+                <p>Com respeito e alegria,</p>
+                <p>No Monteiro é educação!</p>
+            </div>
+            
+            <div class="chorus">
+                <h3>Refrão</h3>
+                <p>Eu fico o dia inteiro,</p>
+                <p>Aprendo e sou feliz,</p>
+                <p>No melhor lugar do mundo,</p>
+                <p>Colégio Monteiro, é o que eu sempre quis!</p>
+            </div>
+            
+            <div class="verse">
+                <h3>Estrofe</h3>
+                <p>Com professores dedicados,</p>
+                <p>E estrutura de excelência,</p>
+                <p>Formando cidadãos,</p>
+                <p>Com consciência e inteligência!</p>
+            </div>
+            
+            <div class="chorus">
+                <h3>Refrão</h3>
+                <p>Eu fico o dia inteiro,</p>
+                <p>Aprendo e sou feliz,</p>
+                <p>No melhor lugar do mundo,</p>
+                <p>Colégio Monteiro, é o que eu sempre quis!</p>
+            </div>
+        </div>
+        
+    </div>
+    
+    <footer>
+        Colégio Monteiro - Onde a educação é feita com amor e dedicação
+    </footer>
+
+    <script>
+        document.querySelector('.play-btn').addEventListener('click', function() {
+            const notes = document.querySelectorAll('.note');
+            notes.forEach(note => {
+                note.style.animation = 'none';
+                setTimeout(() => {
+                    note.style.animation = '';
+                }, 10);
+            });
+            
+            // Simulação de reprodução de áudio
+            this.textContent = this.textContent === 'Ouvir Jingle' ? 'Parar Jingle' : 'Ouvir Jingle';
+            
+            // Aqui viria o código para reproduzir o áudio real
+            alert('Jingle reproduzido! Em uma implementação real, aqui tocaria o áudio.');
+        });
+    </script>
+</body>
+</html>
+
